@@ -127,7 +127,7 @@ export default function Home() {
           <div className="text-center max-w-4xl mx-auto">
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/10 mb-8">
               <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
-              <span className="text-sm text-gray-400">Coming Soon</span>
+              <span className="text-sm text-gray-400">Launching Soon</span>
             </div>
 
             <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight">
@@ -160,90 +160,6 @@ export default function Home() {
               </a>
             </div>
           </div>
-
-          {/* Hero visual - Core Value Props */}
-          <div className="mt-20 relative">
-            <div className="gradient-border rounded-2xl p-8 glow">
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                <div className="bg-white/5 rounded-xl p-6 text-center">
-                  <div className="w-12 h-12 rounded-lg bg-primary/20 flex items-center justify-center mx-auto mb-4 text-primary">
-                    <AIIcon />
-                  </div>
-                  <div className="text-xl font-bold mb-2">AI Recommender</div>
-                  <div className="text-gray-400 text-sm">Smart matching based on brand values, audience fit, and campaign goals</div>
-                </div>
-                <div className="bg-white/5 rounded-xl p-6 text-center">
-                  <div className="w-12 h-12 rounded-lg bg-secondary/20 flex items-center justify-center mx-auto mb-4 text-secondary">
-                    <SocialIcon />
-                  </div>
-                  <div className="text-xl font-bold mb-2">Social Integration</div>
-                  <div className="text-gray-400 text-sm">Direct connection to athlete socials for real reach and engagement data</div>
-                </div>
-                <div className="bg-white/5 rounded-xl p-6 text-center">
-                  <div className="w-12 h-12 rounded-lg bg-accent/20 flex items-center justify-center mx-auto mb-4 text-accent">
-                    <ChartIcon />
-                  </div>
-                  <div className="text-xl font-bold mb-2">Performance Prediction</div>
-                  <div className="text-gray-400 text-sm">AI model that predicts athlete future performances to spot rising stars early</div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Athlete Value Prop */}
-      <section className="py-16 px-4">
-        <div className="max-w-4xl mx-auto">
-          <div className="gradient-border rounded-2xl p-8 md:p-12 bg-background">
-            <div className="grid md:grid-cols-2 gap-8 items-center">
-              <div>
-                <h2 className="text-3xl md:text-4xl font-bold mb-4">
-                  Built for Athletes Who Want to <span className="gradient-text">Focus on Winning</span>
-                </h2>
-                <p className="text-gray-400 text-lg">
-                  Finding sponsorships shouldn't be a full-time job. MatchPoint AI handles the
-                  business side so you can dedicate your energy to training, competing, and
-                  building your athletic career.
-                </p>
-              </div>
-              <div className="space-y-4">
-                <div className="flex items-start gap-4 bg-white/5 rounded-xl p-4">
-                  <div className="w-10 h-10 rounded-lg bg-primary/20 flex items-center justify-center text-primary flex-shrink-0">
-                    <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-                    </svg>
-                  </div>
-                  <div>
-                    <div className="font-semibold">Save Hours Every Week</div>
-                    <div className="text-gray-400 text-sm">No more cold emails or pitching. Brands come to you.</div>
-                  </div>
-                </div>
-                <div className="flex items-start gap-4 bg-white/5 rounded-xl p-4">
-                  <div className="w-10 h-10 rounded-lg bg-secondary/20 flex items-center justify-center text-secondary flex-shrink-0">
-                    <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
-                    </svg>
-                  </div>
-                  <div>
-                    <div className="font-semibold">Get Discovered Early</div>
-                    <div className="text-gray-400 text-sm">Our AI spots your potential before you break out.</div>
-                  </div>
-                </div>
-                <div className="flex items-start gap-4 bg-white/5 rounded-xl p-4">
-                  <div className="w-10 h-10 rounded-lg bg-accent/20 flex items-center justify-center text-accent flex-shrink-0">
-                    <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 9V7a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2m2 4h10a2 2 0 002-2v-6a2 2 0 00-2-2H9a2 2 0 00-2 2v6a2 2 0 002 2zm7-5a2 2 0 11-4 0 2 2 0 014 0z" />
-                    </svg>
-                  </div>
-                  <div>
-                    <div className="font-semibold">Accelerate Your Career</div>
-                    <div className="text-gray-400 text-sm">Earlier partnerships mean faster growth and more resources.</div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
         </div>
       </section>
 
@@ -260,128 +176,27 @@ export default function Home() {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-8">
-            {/* AI Recommender */}
-            <div className="gradient-border rounded-2xl p-8 bg-background">
-              <div className="flex items-start gap-4">
-                <div className="w-14 h-14 rounded-xl bg-primary/20 flex items-center justify-center text-primary flex-shrink-0">
-                  <AIIcon />
-                </div>
-                <div>
-                  <h3 className="text-2xl font-bold mb-3">Intelligent Matching Engine</h3>
-                  <p className="text-gray-400 mb-4">
-                    Our AI analyzes brand requirements, athlete profiles, audience demographics,
-                    and historical performance to recommend the most suitable partnerships.
-                  </p>
-                  <ul className="space-y-2">
-                    <li className="flex items-center gap-2 text-gray-300">
-                      <CheckIcon />
-                      Brand alignment scoring
-                    </li>
-                    <li className="flex items-center gap-2 text-gray-300">
-                      <CheckIcon />
-                      Audience overlap analysis
-                    </li>
-                    <li className="flex items-center gap-2 text-gray-300">
-                      <CheckIcon />
-                      Campaign type matching (short/long term)
-                    </li>
-                  </ul>
-                </div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div className="bg-white/5 rounded-xl p-6 text-center">
+              <div className="w-12 h-12 rounded-lg bg-primary/20 flex items-center justify-center mx-auto mb-4 text-primary">
+                <ChartIcon />
               </div>
+              <div className="text-xl font-bold mb-2">Athlete Performance Index</div>
+              <div className="text-gray-400 text-sm">ML/AI technology matches Brands with Athletes at all career stages for mutually beneficial sponsorship opportunities.</div>
             </div>
-
-            {/* Social Integration */}
-            <div className="gradient-border rounded-2xl p-8 bg-background">
-              <div className="flex items-start gap-4">
-                <div className="w-14 h-14 rounded-xl bg-secondary/20 flex items-center justify-center text-secondary flex-shrink-0">
-                  <SocialIcon />
-                </div>
-                <div>
-                  <h3 className="text-2xl font-bold mb-3">Social Media Integration</h3>
-                  <p className="text-gray-400 mb-4">
-                    Connect athlete social accounts to pull real engagement metrics,
-                    follower demographics, and content performance data.
-                  </p>
-                  <ul className="space-y-2">
-                    <li className="flex items-center gap-2 text-gray-300">
-                      <CheckIcon />
-                      Instagram, TikTok, X, YouTube
-                    </li>
-                    <li className="flex items-center gap-2 text-gray-300">
-                      <CheckIcon />
-                      Real-time reach & engagement
-                    </li>
-                    <li className="flex items-center gap-2 text-gray-300">
-                      <CheckIcon />
-                      Audience demographics breakdown
-                    </li>
-                  </ul>
-                </div>
+            <div className="bg-white/5 rounded-xl p-6 text-center">
+              <div className="w-12 h-12 rounded-lg bg-secondary/20 flex items-center justify-center mx-auto mb-4 text-secondary">
+                <SocialIcon />
               </div>
+              <div className="text-xl font-bold mb-2">Extensive Network</div>
+              <div className="text-gray-400 text-sm">Pool of Brands & Agencies seeking Brand Ambassadors across multiple maturity journeys for short-medium-long term partnerships.</div>
             </div>
-
-            {/* Performance Model */}
-            <div className="gradient-border rounded-2xl p-8 bg-background">
-              <div className="flex items-start gap-4">
-                <div className="w-14 h-14 rounded-xl bg-accent/20 flex items-center justify-center text-accent flex-shrink-0">
-                  <ChartIcon />
-                </div>
-                <div>
-                  <h3 className="text-2xl font-bold mb-3">Athletic Performance Prediction</h3>
-                  <p className="text-gray-400 mb-4">
-                    Our AI model predicts athlete future performances, helping brands
-                    identify rising stars before they break out — and giving athletes
-                    access to partnerships earlier in their career.
-                  </p>
-                  <ul className="space-y-2">
-                    <li className="flex items-center gap-2 text-gray-300">
-                      <CheckIcon />
-                      Future performance forecasting
-                    </li>
-                    <li className="flex items-center gap-2 text-gray-300">
-                      <CheckIcon />
-                      Rising star identification
-                    </li>
-                    <li className="flex items-center gap-2 text-gray-300">
-                      <CheckIcon />
-                      Career trajectory analysis
-                    </li>
-                  </ul>
-                </div>
+            <div className="bg-white/5 rounded-xl p-6 text-center">
+              <div className="w-12 h-12 rounded-lg bg-accent/20 flex items-center justify-center mx-auto mb-4 text-accent">
+                <AIIcon />
               </div>
-            </div>
-
-            {/* Analytics Dashboard */}
-            <div className="gradient-border rounded-2xl p-8 bg-background">
-              <div className="flex items-start gap-4">
-                <div className="w-14 h-14 rounded-xl bg-green-500/20 flex items-center justify-center text-green-500 flex-shrink-0">
-                  <svg className="w-12 h-12" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M4 5a1 1 0 011-1h14a1 1 0 011 1v2a1 1 0 01-1 1H5a1 1 0 01-1-1V5zM4 13a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H5a1 1 0 01-1-1v-6zM16 13a1 1 0 011-1h2a1 1 0 011 1v6a1 1 0 01-1 1h-2a1 1 0 01-1-1v-6z" />
-                  </svg>
-                </div>
-                <div>
-                  <h3 className="text-2xl font-bold mb-3">Campaign Analytics Dashboard</h3>
-                  <p className="text-gray-400 mb-4">
-                    Track campaign performance in real-time with comprehensive marketing
-                    metrics for both brands and athletes.
-                  </p>
-                  <ul className="space-y-2">
-                    <li className="flex items-center gap-2 text-gray-300">
-                      <CheckIcon />
-                      Impressions, reach, engagement
-                    </li>
-                    <li className="flex items-center gap-2 text-gray-300">
-                      <CheckIcon />
-                      Conversion tracking
-                    </li>
-                    <li className="flex items-center gap-2 text-gray-300">
-                      <CheckIcon />
-                      Comparative campaign analysis
-                    </li>
-                  </ul>
-                </div>
-              </div>
+              <div className="text-xl font-bold mb-2">All-in-One Platform</div>
+              <div className="text-gray-400 text-sm">Seamless experience from discovery to signing agreements, driving efficiency & transparency for all stakeholders.</div>
             </div>
           </div>
         </div>
