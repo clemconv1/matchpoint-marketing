@@ -1,21 +1,23 @@
 @import "tailwindcss";
 
 :root {
-  --background: #0a0a0f;
-  --foreground: #f5f5f7;
-  --primary: #8b5cf6;
-  --primary-light: #a78bfa;
-  --secondary: #06b6d4;
-  --accent: #f43f5e;
+  --background: #0c0c0c;
+  --foreground: #ffffff;
+  --primary: #00ff87;
+  --primary-dark: #00cc6a;
+  --secondary: #ff6b35;
+  --accent: #00d4ff;
+  --dark-surface: #1a1a1a;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-primary: var(--primary);
-  --color-primary-light: var(--primary-light);
+  --color-primary-dark: var(--primary-dark);
   --color-secondary: var(--secondary);
   --color-accent: var(--accent);
+  --color-dark-surface: var(--dark-surface);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }
@@ -26,47 +28,223 @@ body {
   font-family: var(--font-sans), Arial, Helvetica, sans-serif;
 }
 
-.gradient-text {
-  background: linear-gradient(135deg, #8b5cf6 0%, #06b6d4 50%, #f43f5e 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-
-.gradient-border {
+/* Sporty headline style */
+.headline-accent {
+  color: var(--primary);
   position: relative;
-  background: linear-gradient(var(--background), var(--background)) padding-box,
-              linear-gradient(135deg, #8b5cf6, #06b6d4, #f43f5e) border-box;
-  border: 2px solid transparent;
+  display: inline-block;
 }
 
-.glow {
-  box-shadow: 0 0 40px rgba(139, 92, 246, 0.3), 0 0 80px rgba(6, 182, 212, 0.2);
+.headline-accent::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: var(--primary);
+  transform: skewX(-12deg);
 }
 
-.card-hover {
-  transition: all 0.3s ease;
+/* Diagonal section divider */
+.diagonal-top {
+  clip-path: polygon(0 8%, 100% 0, 100% 100%, 0 100%);
 }
 
-.card-hover:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 20px 40px rgba(139, 92, 246, 0.2);
+.diagonal-bottom {
+  clip-path: polygon(0 0, 100% 0, 100% 92%, 0 100%);
 }
 
-@keyframes float {
-  0%, 100% { transform: translateY(0px); }
-  50% { transform: translateY(-10px); }
+/* Speed lines decoration */
+.speed-lines {
+  position: relative;
+  overflow: hidden;
 }
 
-.animate-float {
-  animation: float 3s ease-in-out infinite;
+.speed-lines::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: -100%;
+  width: 200%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--primary), transparent);
+  transform: translateY(-50%) rotate(-3deg);
+  opacity: 0.3;
 }
 
-@keyframes pulse-glow {
-  0%, 100% { box-shadow: 0 0 20px rgba(139, 92, 246, 0.4); }
-  50% { box-shadow: 0 0 40px rgba(139, 92, 246, 0.6), 0 0 60px rgba(6, 182, 212, 0.3); }
+/* Athletic card style */
+.athletic-card {
+  background: var(--dark-surface);
+  border-left: 4px solid var(--primary);
+  position: relative;
+  transition: all 0.2s ease;
 }
 
-.animate-pulse-glow {
-  animation: pulse-glow 2s ease-in-out infinite;
+.athletic-card:hover {
+  transform: translateX(8px);
+  border-left-color: var(--secondary);
+}
+
+.athletic-card-orange {
+  border-left-color: var(--secondary);
+}
+
+.athletic-card-orange:hover {
+  border-left-color: var(--primary);
+}
+
+.athletic-card-blue {
+  border-left-color: var(--accent);
+}
+
+.athletic-card-blue:hover {
+  border-left-color: var(--primary);
+}
+
+/* Dynamic button */
+.btn-primary {
+  background: var(--primary);
+  color: var(--background);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.2s ease;
+}
+
+.btn-primary:hover {
+  background: var(--primary-dark);
+  transform: translateY(-2px);
+}
+
+.btn-primary::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+  transition: left 0.4s ease;
+}
+
+.btn-primary:hover::after {
+  left: 100%;
+}
+
+.btn-outline {
+  border: 2px solid var(--primary);
+  color: var(--primary);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  transition: all 0.2s ease;
+}
+
+.btn-outline:hover {
+  background: var(--primary);
+  color: var(--background);
+}
+
+/* Step counter */
+.step-number {
+  font-size: 4rem;
+  font-weight: 900;
+  color: transparent;
+  -webkit-text-stroke: 2px var(--primary);
+  line-height: 1;
+}
+
+/* Feature icon container */
+.icon-box {
+  width: 56px;
+  height: 56px;
+  background: var(--primary);
+  color: var(--background);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  clip-path: polygon(0 0, 100% 0, 100% 70%, 85% 100%, 0 100%);
+}
+
+.icon-box-orange {
+  background: var(--secondary);
+}
+
+.icon-box-blue {
+  background: var(--accent);
+}
+
+/* Striped background accent */
+.striped-bg {
+  background: repeating-linear-gradient(
+    -45deg,
+    transparent,
+    transparent 10px,
+    rgba(0, 255, 135, 0.03) 10px,
+    rgba(0, 255, 135, 0.03) 20px
+  );
+}
+
+/* Section with angled edge */
+.angled-section {
+  position: relative;
+}
+
+.angled-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 80px;
+  background: var(--background);
+  clip-path: polygon(0 0, 100% 0, 100% 0, 0 100%);
+}
+
+/* Energetic text highlight */
+.text-highlight {
+  background: linear-gradient(transparent 60%, rgba(0, 255, 135, 0.3) 60%);
+}
+
+/* User type selector */
+.type-selector {
+  border: 2px solid #333;
+  transition: all 0.2s ease;
+}
+
+.type-selector:hover {
+  border-color: #555;
+}
+
+.type-selector.active {
+  border-color: var(--primary);
+  background: rgba(0, 255, 135, 0.1);
+}
+
+/* Animated underline for nav */
+.nav-link {
+  position: relative;
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--primary);
+  transition: width 0.2s ease;
+}
+
+.nav-link:hover::after {
+  width: 100%;
+}
+
+/* Check icon style */
+.check-icon {
+  color: var(--primary);
 }

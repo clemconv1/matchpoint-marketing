@@ -4,50 +4,50 @@ import { useState } from "react";
 
 // Icons as simple SVG components
 const AthleteIcon = () => (
-  <svg className="w-12 h-12" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+  <svg className="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
   </svg>
 );
 
 const BrandIcon = () => (
-  <svg className="w-12 h-12" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+  <svg className="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
   </svg>
 );
 
 const AgentIcon = () => (
-  <svg className="w-12 h-12" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+  <svg className="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
   </svg>
 );
 
 const ChartIcon = () => (
-  <svg className="w-12 h-12" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+  <svg className="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
   </svg>
 );
 
-const SocialIcon = () => (
-  <svg className="w-12 h-12" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.368 2.684 3 3 0 00-5.368-2.684z" />
+const NetworkIcon = () => (
+  <svg className="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9" />
   </svg>
 );
 
-const AIIcon = () => (
-  <svg className="w-12 h-12" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+const PlatformIcon = () => (
+  <svg className="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" />
   </svg>
 );
 
 const CheckIcon = () => (
-  <svg className="w-5 h-5 text-secondary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+  <svg className="w-5 h-5 check-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
   </svg>
 );
 
-const ArrowRightIcon = () => (
+const ArrowIcon = () => (
   <svg className="w-5 h-5 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
   </svg>
 );
 
@@ -88,28 +88,27 @@ export default function Home() {
   };
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen bg-[#0c0c0c]">
       {/* Navigation */}
-      <nav className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-lg border-b border-white/10">
+      <nav className="fixed top-0 left-0 right-0 z-50 bg-[#0c0c0c]/95 backdrop-blur-sm border-b border-white/5">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
-            <div className="flex items-center gap-2">
-              <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-primary to-secondary flex items-center justify-center">
-                <span className="text-white font-bold text-sm">M</span>
+            <div className="flex items-center gap-3">
+              <div className="w-10 h-10 bg-[#00ff87] flex items-center justify-center" style={{ clipPath: 'polygon(0 0, 100% 0, 100% 70%, 85% 100%, 0 100%)' }}>
+                <span className="text-black font-black text-lg">M</span>
               </div>
-              <span className="font-bold text-xl">MatchPoint<span className="text-primary">AI</span></span>
+              <span className="font-bold text-xl tracking-tight">MATCHPOINT</span>
             </div>
             <div className="hidden md:flex items-center gap-8">
-              <a href="#features" className="text-sm text-gray-400 hover:text-white transition">Features</a>
-              <a href="#platform" className="text-sm text-gray-400 hover:text-white transition">Platform</a>
-              <a href="#how-it-works" className="text-sm text-gray-400 hover:text-white transition">How it Works</a>
-              <a href="#signup" className="text-sm text-gray-400 hover:text-white transition">Get Early Access</a>
+              <a href="#features" className="nav-link text-sm text-gray-400 hover:text-white transition">Features</a>
+              <a href="#platform" className="nav-link text-sm text-gray-400 hover:text-white transition">Platform</a>
+              <a href="#how-it-works" className="nav-link text-sm text-gray-400 hover:text-white transition">How it Works</a>
             </div>
             <a
               href={SURVEY_LINK}
               target="_blank"
               rel="noopener noreferrer"
-              className="px-4 py-2 rounded-lg bg-primary hover:bg-primary-light transition text-sm font-medium"
+              className="btn-primary px-5 py-2 text-sm"
             >
               Take Survey
             </a>
@@ -118,333 +117,301 @@ export default function Home() {
       </nav>
 
       {/* Hero Section */}
-      <section className="pt-32 pb-20 px-4 relative overflow-hidden">
-        {/* Background gradient effects */}
-        <div className="absolute top-0 left-1/4 w-96 h-96 bg-primary/20 rounded-full blur-3xl" />
-        <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-secondary/20 rounded-full blur-3xl" />
-
-        <div className="max-w-7xl mx-auto relative">
-          <div className="text-center max-w-4xl mx-auto">
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/10 mb-8">
-              <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
-              <span className="text-sm text-gray-400">Launching Soon</span>
+      <section className="pt-32 pb-24 px-4 relative">
+        <div className="max-w-7xl mx-auto">
+          <div className="max-w-3xl">
+            <div className="inline-flex items-center gap-2 px-3 py-1 bg-[#00ff87]/10 border border-[#00ff87]/30 mb-8">
+              <span className="w-2 h-2 bg-[#00ff87] animate-pulse" />
+              <span className="text-sm text-[#00ff87] font-medium uppercase tracking-wider">Launching Soon</span>
             </div>
 
-            <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight">
-              Find Your Perfect{" "}
-              <span className="gradient-text">Athlete-Brand Match</span>
+            <h1 className="text-5xl md:text-7xl font-black mb-6 leading-[1.1] tracking-tight">
+              FIND YOUR PERFECT<br />
+              <span className="text-[#00ff87]">ATHLETE-BRAND</span><br />
+              MATCH
             </h1>
 
-            <p className="text-xl text-gray-400 mb-10 max-w-2xl mx-auto">
-              MatchPoint AI connects rising athletes with brand partnerships so they can
-              focus on what matters — training and competing. Our AI predicts athletic potential
-              and matches athletes with brands looking for their next ambassador, making
-              sponsorship deals happen faster for everyone.
+            <p className="text-lg text-gray-400 mb-10 max-w-xl leading-relaxed">
+              MatchPoint connects rising athletes with brand partnerships.
+              Our AI predicts athletic potential and matches athletes with brands
+              looking for their next ambassador.
             </p>
 
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <div className="flex flex-col sm:flex-row gap-4">
               <a
                 href="#signup"
-                className="px-8 py-4 rounded-xl bg-gradient-to-r from-primary to-secondary hover:opacity-90 transition font-semibold text-lg inline-flex items-center justify-center"
+                className="btn-primary px-8 py-4 text-base inline-flex items-center justify-center"
               >
                 Get Early Access
-                <ArrowRightIcon />
+                <ArrowIcon />
               </a>
               <a
                 href={SURVEY_LINK}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="px-8 py-4 rounded-xl border border-white/20 hover:bg-white/5 transition font-semibold text-lg"
+                className="btn-outline px-8 py-4 text-base text-center"
               >
                 Help Shape the Product
               </a>
             </div>
           </div>
         </div>
+
+        {/* Decorative element */}
+        <div className="absolute top-1/2 right-0 w-1/3 h-[2px] bg-gradient-to-l from-[#00ff87] to-transparent opacity-30 hidden lg:block" />
       </section>
 
-      {/* Core Features Section */}
-      <section id="features" className="py-20 px-4 bg-white/[0.02]">
+      {/* Features Section */}
+      <section id="features" className="py-24 px-4 bg-[#111] striped-bg">
         <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold mb-4">
-              Powered by <span className="gradient-text">Data & AI</span>
+          <div className="mb-16">
+            <p className="text-[#00ff87] font-bold uppercase tracking-wider mb-3">What We Offer</p>
+            <h2 className="text-4xl md:text-5xl font-black tracking-tight">
+              POWERED BY DATA
             </h2>
-            <p className="text-gray-400 text-lg max-w-2xl mx-auto">
-              Smart matching that benefits everyone — athletes get discovered faster,
-              brands find authentic partners, and agents scale their operations.
-            </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <div className="bg-white/5 rounded-xl p-6 text-center">
-              <div className="w-12 h-12 rounded-lg bg-primary/20 flex items-center justify-center mx-auto mb-4 text-primary">
+          <div className="grid md:grid-cols-3 gap-6">
+            <div className="athletic-card p-8">
+              <div className="icon-box mb-6">
                 <ChartIcon />
               </div>
-              <div className="text-xl font-bold mb-2">Athlete Performance Index</div>
-              <div className="text-gray-400 text-sm">ML/AI technology matches Brands with Athletes at all career stages for mutually beneficial sponsorship opportunities.</div>
+              <h3 className="text-xl font-bold mb-3">Athlete Performance Index</h3>
+              <p className="text-gray-400 leading-relaxed">
+                ML/AI technology matches Brands with Athletes at all career stages for mutually beneficial sponsorship opportunities.
+              </p>
             </div>
-            <div className="bg-white/5 rounded-xl p-6 text-center">
-              <div className="w-12 h-12 rounded-lg bg-secondary/20 flex items-center justify-center mx-auto mb-4 text-secondary">
-                <SocialIcon />
+
+            <div className="athletic-card athletic-card-orange p-8">
+              <div className="icon-box icon-box-orange mb-6">
+                <NetworkIcon />
               </div>
-              <div className="text-xl font-bold mb-2">Extensive Network</div>
-              <div className="text-gray-400 text-sm">Pool of Brands & Agencies seeking Brand Ambassadors across multiple maturity journeys for short-medium-long term partnerships.</div>
+              <h3 className="text-xl font-bold mb-3">Extensive Network</h3>
+              <p className="text-gray-400 leading-relaxed">
+                Pool of Brands & Agencies seeking Brand Ambassadors across multiple maturity journeys for short-medium-long term partnerships.
+              </p>
             </div>
-            <div className="bg-white/5 rounded-xl p-6 text-center">
-              <div className="w-12 h-12 rounded-lg bg-accent/20 flex items-center justify-center mx-auto mb-4 text-accent">
-                <AIIcon />
+
+            <div className="athletic-card athletic-card-blue p-8">
+              <div className="icon-box icon-box-blue mb-6">
+                <PlatformIcon />
               </div>
-              <div className="text-xl font-bold mb-2">All-in-One Platform</div>
-              <div className="text-gray-400 text-sm">Seamless experience from discovery to signing agreements, driving efficiency & transparency for all stakeholders.</div>
+              <h3 className="text-xl font-bold mb-3">All-in-One Platform</h3>
+              <p className="text-gray-400 leading-relaxed">
+                Seamless experience from discovery to signing agreements, driving efficiency & transparency for all stakeholders.
+              </p>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Platform Section - Three User Types */}
-      <section id="platform" className="py-20 px-4">
+      {/* Platform Section */}
+      <section id="platform" className="py-24 px-4">
         <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold mb-4">
-              Three Tailored <span className="gradient-text">Experiences</span>
+          <div className="mb-16">
+            <p className="text-[#ff6b35] font-bold uppercase tracking-wider mb-3">Built For Everyone</p>
+            <h2 className="text-4xl md:text-5xl font-black tracking-tight">
+              THREE EXPERIENCES
             </h2>
-            <p className="text-gray-400 text-lg max-w-2xl mx-auto">
-              Purpose-built dashboards for brands, athletes, and agents - each with the tools they need.
-            </p>
           </div>
 
           <div className="grid md:grid-cols-3 gap-8">
-            {/* Brands Card */}
-            <div className="gradient-border rounded-2xl p-8 card-hover bg-background">
-              <div className="w-16 h-16 rounded-xl bg-secondary/20 flex items-center justify-center text-secondary mb-6">
+            {/* Brands */}
+            <div className="bg-[#1a1a1a] p-8 border-t-4 border-[#ff6b35]">
+              <div className="w-14 h-14 bg-[#ff6b35]/20 flex items-center justify-center mb-6 text-[#ff6b35]">
                 <BrandIcon />
               </div>
               <h3 className="text-2xl font-bold mb-4">For Brands</h3>
               <p className="text-gray-400 mb-6">
-                Find athletes that match your target audience and campaign goals with AI-powered recommendations.
+                Find athletes that match your target audience and campaign goals.
               </p>
               <ul className="space-y-3">
-                <li className="flex items-center gap-3">
-                  <CheckIcon />
-                  <span className="text-gray-300">AI athlete recommendations</span>
-                </li>
-                <li className="flex items-center gap-3">
-                  <CheckIcon />
-                  <span className="text-gray-300">Filter by sport, reach, demographics</span>
-                </li>
-                <li className="flex items-center gap-3">
-                  <CheckIcon />
-                  <span className="text-gray-300">Campaign performance dashboard</span>
-                </li>
-                <li className="flex items-center gap-3">
-                  <CheckIcon />
-                  <span className="text-gray-300">ROI tracking & analytics</span>
-                </li>
+                {["AI athlete recommendations", "Filter by sport & demographics", "Campaign dashboard", "ROI tracking"].map((item) => (
+                  <li key={item} className="flex items-center gap-3">
+                    <CheckIcon />
+                    <span className="text-gray-300 text-sm">{item}</span>
+                  </li>
+                ))}
               </ul>
             </div>
 
-            {/* Athletes Card */}
-            <div className="gradient-border rounded-2xl p-8 card-hover bg-background">
-              <div className="w-16 h-16 rounded-xl bg-primary/20 flex items-center justify-center text-primary mb-6">
+            {/* Athletes */}
+            <div className="bg-[#1a1a1a] p-8 border-t-4 border-[#00ff87]">
+              <div className="w-14 h-14 bg-[#00ff87]/20 flex items-center justify-center mb-6 text-[#00ff87]">
                 <AthleteIcon />
               </div>
               <h3 className="text-2xl font-bold mb-4">For Athletes</h3>
               <p className="text-gray-400 mb-6">
-                Stop chasing sponsorships. Let brands come to you while you focus on training and competing.
+                Let brands come to you while you focus on training and competing.
               </p>
               <ul className="space-y-3">
-                <li className="flex items-center gap-3">
-                  <CheckIcon />
-                  <span className="text-gray-300">Brands find you, not the other way around</span>
-                </li>
-                <li className="flex items-center gap-3">
-                  <CheckIcon />
-                  <span className="text-gray-300">More time for training, less admin</span>
-                </li>
-                <li className="flex items-center gap-3">
-                  <CheckIcon />
-                  <span className="text-gray-300">Get discovered earlier in your career</span>
-                </li>
-                <li className="flex items-center gap-3">
-                  <CheckIcon />
-                  <span className="text-gray-300">Track all your partnerships in one place</span>
-                </li>
+                {["Brands find you first", "More time for training", "Get discovered early", "Track partnerships"].map((item) => (
+                  <li key={item} className="flex items-center gap-3">
+                    <CheckIcon />
+                    <span className="text-gray-300 text-sm">{item}</span>
+                  </li>
+                ))}
               </ul>
             </div>
 
-            {/* Agents Card */}
-            <div className="gradient-border rounded-2xl p-8 card-hover bg-background">
-              <div className="w-16 h-16 rounded-xl bg-accent/20 flex items-center justify-center text-accent mb-6">
+            {/* Agents */}
+            <div className="bg-[#1a1a1a] p-8 border-t-4 border-[#00d4ff]">
+              <div className="w-14 h-14 bg-[#00d4ff]/20 flex items-center justify-center mb-6 text-[#00d4ff]">
                 <AgentIcon />
               </div>
               <h3 className="text-2xl font-bold mb-4">For Agents</h3>
               <p className="text-gray-400 mb-6">
-                Manage your roster of athletes, track all their campaigns, and maximize partnership revenue.
+                Manage your roster and maximize partnership revenue.
               </p>
               <ul className="space-y-3">
-                <li className="flex items-center gap-3">
-                  <CheckIcon />
-                  <span className="text-gray-300">Multi-athlete portfolio view</span>
-                </li>
-                <li className="flex items-center gap-3">
-                  <CheckIcon />
-                  <span className="text-gray-300">Aggregated campaign analytics</span>
-                </li>
-                <li className="flex items-center gap-3">
-                  <CheckIcon />
-                  <span className="text-gray-300">Bulk opportunity management</span>
-                </li>
-                <li className="flex items-center gap-3">
-                  <CheckIcon />
-                  <span className="text-gray-300">Revenue & commission tracking</span>
-                </li>
+                {["Portfolio management", "Campaign analytics", "Bulk opportunities", "Revenue tracking"].map((item) => (
+                  <li key={item} className="flex items-center gap-3">
+                    <CheckIcon />
+                    <span className="text-gray-300 text-sm">{item}</span>
+                  </li>
+                ))}
               </ul>
             </div>
           </div>
         </div>
       </section>
 
-      {/* How It Works Section */}
-      <section id="how-it-works" className="py-20 px-4 bg-white/[0.02]">
+      {/* How It Works */}
+      <section id="how-it-works" className="py-24 px-4 bg-[#111]">
         <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold mb-4">
-              How <span className="gradient-text">MatchPoint AI</span> Works
+          <div className="mb-16">
+            <p className="text-[#00d4ff] font-bold uppercase tracking-wider mb-3">Simple Process</p>
+            <h2 className="text-4xl md:text-5xl font-black tracking-tight">
+              HOW IT WORKS
             </h2>
-            <p className="text-gray-400 text-lg max-w-2xl mx-auto">
-              From profile creation to campaign analytics - a seamless partnership journey.
-            </p>
           </div>
 
           <div className="grid md:grid-cols-4 gap-8">
             {[
-              { step: "01", title: "Connect & Profile", desc: "Athletes link their socials and sports data. Brands define their target audience and campaign goals." },
-              { step: "02", title: "AI Analysis", desc: "Our model predicts athletic performance trajectory and analyzes audience fit to identify rising stars." },
-              { step: "03", title: "Smart Matching", desc: "Brands get AI-curated athlete recommendations. Athletes receive relevant opportunities automatically." },
-              { step: "04", title: "Focus on What Matters", desc: "Athletes train while partnerships happen. Brands and athletes track campaign performance in real-time." },
-            ].map((item, index) => (
-              <div key={index} className="text-center">
-                <div className="w-16 h-16 rounded-full bg-gradient-to-br from-primary to-secondary flex items-center justify-center mx-auto mb-6 text-2xl font-bold">
-                  {item.step}
-                </div>
-                <h3 className="text-xl font-bold mb-3">{item.title}</h3>
-                <p className="text-gray-400">{item.desc}</p>
+              { step: "01", title: "Connect", desc: "Athletes link their socials and sports data. Brands define their goals." },
+              { step: "02", title: "Analyze", desc: "Our AI predicts performance trajectory and analyzes audience fit." },
+              { step: "03", title: "Match", desc: "Brands get curated recommendations. Athletes receive opportunities." },
+              { step: "04", title: "Perform", desc: "Focus on what matters while we track campaign performance." },
+            ].map((item) => (
+              <div key={item.step} className="relative">
+                <div className="step-number mb-4">{item.step}</div>
+                <h3 className="text-xl font-bold mb-2">{item.title}</h3>
+                <p className="text-gray-400 text-sm leading-relaxed">{item.desc}</p>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Survey CTA Section */}
-      <section className="py-20 px-4">
+      {/* Survey CTA */}
+      <section className="py-24 px-4">
         <div className="max-w-4xl mx-auto">
-          <div className="gradient-border rounded-2xl p-12 text-center glow bg-background">
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20 mb-6">
-              <span className="text-sm text-primary-light">Help shape the product</span>
+          <div className="bg-[#1a1a1a] p-12 md:p-16 border-l-4 border-[#00ff87] relative overflow-hidden">
+            <div className="absolute top-0 right-0 w-64 h-64 bg-[#00ff87]/5 blur-3xl" />
+            <div className="relative">
+              <p className="text-[#00ff87] font-bold uppercase tracking-wider mb-3">Shape The Future</p>
+              <h2 className="text-3xl md:text-4xl font-black mb-4 tracking-tight">
+                HELP US BUILD WHAT YOU NEED
+              </h2>
+              <p className="text-gray-400 text-lg mb-8 max-w-xl">
+                We're designing MatchPoint with input from athletes, brands, and agents.
+                Your feedback shapes what we build.
+              </p>
+              <a
+                href={SURVEY_LINK}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn-primary px-8 py-4 text-base inline-flex items-center"
+              >
+                Take the Survey
+                <ArrowIcon />
+              </a>
             </div>
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">
-              Help Us Build What You Need
-            </h2>
-            <p className="text-gray-400 text-lg mb-8 max-w-2xl mx-auto">
-              We're designing MatchPoint AI with input from athletes, brands, and agents.
-              Your feedback will directly shape the features we build first.
-            </p>
-            <a
-              href={SURVEY_LINK}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center px-8 py-4 rounded-xl bg-gradient-to-r from-primary to-secondary hover:opacity-90 transition font-semibold text-lg"
-            >
-              Take the Survey
-              <ArrowRightIcon />
-            </a>
           </div>
         </div>
       </section>
 
-      {/* Email Signup Section */}
-      <section id="signup" className="py-20 px-4 bg-white/[0.02]">
-        <div className="max-w-2xl mx-auto text-center">
-          <h2 className="text-4xl md:text-5xl font-bold mb-4">
-            Get <span className="gradient-text">Early Access</span>
-          </h2>
-          <p className="text-gray-400 text-lg mb-10">
-            Be among the first to try MatchPoint AI. Join our waitlist and we'll reach out when we're ready to onboard early users.
-          </p>
+      {/* Email Signup */}
+      <section id="signup" className="py-24 px-4 bg-[#111]">
+        <div className="max-w-2xl mx-auto">
+          <div className="text-center mb-12">
+            <p className="text-[#00ff87] font-bold uppercase tracking-wider mb-3">Join The Waitlist</p>
+            <h2 className="text-4xl md:text-5xl font-black tracking-tight mb-4">
+              GET EARLY ACCESS
+            </h2>
+            <p className="text-gray-400 text-lg">
+              Be among the first to try MatchPoint when we launch.
+            </p>
+          </div>
 
           <form onSubmit={handleSubmit} className="space-y-6">
             {/* User Type Selection */}
-            <div className="flex flex-col sm:flex-row justify-center gap-4">
+            <div className="flex flex-col sm:flex-row justify-center gap-3">
               {(["athlete", "brand", "agent"] as const).map((type) => (
                 <button
                   key={type}
                   type="button"
                   onClick={() => setUserType(type)}
-                  className={`px-6 py-3 rounded-xl border transition capitalize ${
-                    userType === type
-                      ? "border-primary bg-primary/20 text-white"
-                      : "border-white/20 text-gray-400 hover:border-white/40"
+                  className={`type-selector px-6 py-3 uppercase font-bold text-sm tracking-wider transition ${
+                    userType === type ? "active text-white" : "text-gray-500"
                   }`}
                 >
-                  I'm a {type}
+                  {type}
                 </button>
               ))}
             </div>
 
             {/* Email Input */}
-            <div className="flex flex-col sm:flex-row gap-4">
+            <div className="flex flex-col sm:flex-row gap-3">
               <input
                 type="email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 placeholder="Enter your email"
                 required
-                className="flex-1 px-6 py-4 rounded-xl bg-white/5 border border-white/20 focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20 transition"
+                className="flex-1 px-6 py-4 bg-[#1a1a1a] border-2 border-[#333] focus:border-[#00ff87] focus:outline-none transition text-white placeholder-gray-500"
               />
               <button
                 type="submit"
                 disabled={status === "loading"}
-                className="px-8 py-4 rounded-xl bg-gradient-to-r from-primary to-secondary hover:opacity-90 transition font-semibold disabled:opacity-50 disabled:cursor-not-allowed"
+                className="btn-primary px-8 py-4 disabled:opacity-50 disabled:cursor-not-allowed"
               >
-                {status === "loading" ? "Joining..." : "Join Waitlist"}
+                {status === "loading" ? "Joining..." : "Join"}
               </button>
             </div>
 
-            {/* Status Message */}
             {message && (
-              <p className={`text-sm ${status === "success" ? "text-green-400" : "text-red-400"}`}>
+              <p className={`text-sm text-center ${status === "success" ? "text-[#00ff87]" : "text-red-500"}`}>
                 {message}
               </p>
             )}
           </form>
 
-          <p className="text-gray-500 text-sm mt-6">
-            No spam, ever. We'll only email you about MatchPoint AI updates.
+          <p className="text-gray-600 text-sm mt-6 text-center">
+            No spam. Only MatchPoint updates.
           </p>
         </div>
       </section>
 
       {/* Footer */}
-      <footer className="py-12 px-4 border-t border-white/10">
+      <footer className="py-12 px-4 border-t border-white/5">
         <div className="max-w-7xl mx-auto">
           <div className="flex flex-col md:flex-row justify-between items-center gap-6">
-            <div className="flex items-center gap-2">
-              <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-primary to-secondary flex items-center justify-center">
-                <span className="text-white font-bold text-sm">M</span>
+            <div className="flex items-center gap-3">
+              <div className="w-8 h-8 bg-[#00ff87] flex items-center justify-center" style={{ clipPath: 'polygon(0 0, 100% 0, 100% 70%, 85% 100%, 0 100%)' }}>
+                <span className="text-black font-black text-sm">M</span>
               </div>
-              <span className="font-bold text-xl">MatchPoint<span className="text-primary">AI</span></span>
+              <span className="font-bold tracking-tight">MATCHPOINT</span>
             </div>
 
             <div className="flex items-center gap-8">
-              <a href="#features" className="text-sm text-gray-400 hover:text-white transition">Features</a>
-              <a href="#platform" className="text-sm text-gray-400 hover:text-white transition">Platform</a>
-              <a href="#how-it-works" className="text-sm text-gray-400 hover:text-white transition">How it Works</a>
-              <a href={SURVEY_LINK} target="_blank" rel="noopener noreferrer" className="text-sm text-gray-400 hover:text-white transition">Survey</a>
+              <a href="#features" className="text-sm text-gray-500 hover:text-white transition">Features</a>
+              <a href="#platform" className="text-sm text-gray-500 hover:text-white transition">Platform</a>
+              <a href="#how-it-works" className="text-sm text-gray-500 hover:text-white transition">How it Works</a>
             </div>
 
-            <p className="text-gray-500 text-sm">
-              © {new Date().getFullYear()} MatchPoint AI. All rights reserved.
+            <p className="text-gray-600 text-sm">
+              © {new Date().getFullYear()} MatchPoint
             </p>
           </div>
         </div>
