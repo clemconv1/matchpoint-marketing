@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
-import { promises as fs } from "fs";
-import path from "path";
+import { GoogleSpreadsheet } from "google-spreadsheet";
+import { JWT } from "google-auth-library";
 
 // Poll response data structure
 interface PollResponse {
@@ -42,36 +42,109 @@ interface PollResponse {
   willingToJoinOnboardingCall: boolean;
 }
 
-const DATA_FILE = path.join(process.cwd(), "data", "poll-responses.json");
-
-async function ensureDataFile() {
-  const dir = path.dirname(DATA_FILE);
-  try {
-    await fs.access(dir);
-  } catch {
-    await fs.mkdir(dir, { recursive: true });
-  }
-
-  try {
-    await fs.access(DATA_FILE);
-  } catch {
-    await fs.writeFile(DATA_FILE, JSON.stringify([], null, 2));
-  }
-}
-
-async function getResponses(): Promise<PollResponse[]> {
-  await ensureDataFile();
-  const data = await fs.readFile(DATA_FILE, "utf-8");
-  return JSON.parse(data);
-}
-
-async function saveResponses(responses: PollResponse[]) {
-  await ensureDataFile();
-  await fs.writeFile(DATA_FILE, JSON.stringify(responses, null, 2));
-}
+// Google Sheets column headers
+const SHEET_HEADERS = [
+  "ID",
+  "Submitted At",
+  "Current Role",
+  "Has Partnered With Brand",
+  // Section 3 fields
+  "Total Brands Partnered",
+  "Partnerships > 6 Months",
+  "Brand Inquiries Per Month",
+  "Hours Per Week On Business",
+  "Requires Performance Report",
+  "Most Frustrating Stages",
+  "Most Frustrating Stage (Other)",
+  "Reason Said No To Brand",
+  // Section 4 fields
+  "Has Refused Brand Offer",
+  "Reason Refused Offer",
+  "Brands Reached Out To",
+  "Reason Brands Haven't Reached Out",
+  "Primary Goal For Partnerships",
+  "Primary Goal (Other)",
+  "Has Media Kit",
+  "Thought Stopped From Messaging",
+  "Thought Stopped (Other)",
+  // Section 5
+  "Willing To Join Onboarding Call",
+];
 
 function generateId(): string {
   return `poll_${Date.now()}_${Math.random().toString(36).substring(2, 11)}`;
+}
+
+async function getGoogleSheet() {
+  const sheetId = process.env.GOOGLE_SHEETS_ID;
+  const email = process.env.GOOGLE_SERVICE_ACCOUNT_EMAIL;
+  const privateKey = process.env.GOOGLE_PRIVATE_KEY?.replace(/\\n/g, "\n");
+
+  if (!sheetId || !email || !privateKey) {
+    console.warn("Google Sheets credentials not configured");
+    return null;
+  }
+
+  const auth = new JWT({
+    email,
+    key: privateKey,
+    scopes: ["https://www.googleapis.com/auth/spreadsheets"],
+  });
+
+  const doc = new GoogleSpreadsheet(sheetId, auth);
+  await doc.loadInfo();
+
+  return doc;
+}
+
+async function appendToGoogleSheet(response: PollResponse) {
+  try {
+    const doc = await getGoogleSheet();
+    if (!doc) return;
+
+    // Get or create the first sheet
+    let sheet = doc.sheetsByIndex[0];
+
+    // Check if headers exist, if not add them
+    await sheet.loadHeaderRow().catch(async () => {
+      await sheet.setHeaderRow(SHEET_HEADERS);
+    });
+
+    // Prepare row data
+    const rowData = {
+      "ID": response.id,
+      "Submitted At": response.submittedAt,
+      "Current Role": response.currentRole.join(", "),
+      "Has Partnered With Brand": response.hasPartneredWithBrand ? "Yes" : "No",
+      // Section 3 fields
+      "Total Brands Partnered": response.section3?.totalBrandsPartnered || "",
+      "Partnerships > 6 Months": response.section3?.partnershipsLongerThan6Months || "",
+      "Brand Inquiries Per Month": response.section3?.brandInquiriesPerMonth || "",
+      "Hours Per Week On Business": response.section3?.hoursPerWeekOnBusiness || "",
+      "Requires Performance Report": response.section3 ? (response.section3.requiresPerformanceReport ? "Yes" : "No") : "",
+      "Most Frustrating Stages": response.section3?.mostFrustratingStages?.join(", ") || "",
+      "Most Frustrating Stage (Other)": response.section3?.mostFrustratingStageOther || "",
+      "Reason Said No To Brand": response.section3?.reasonSaidNoToBrand || "",
+      // Section 4 fields
+      "Has Refused Brand Offer": response.section4 ? (response.section4.hasRefusedBrandOffer ? "Yes" : "No") : "",
+      "Reason Refused Offer": response.section4?.reasonRefusedOffer || "",
+      "Brands Reached Out To": response.section4?.brandsReachedOutTo || "",
+      "Reason Brands Haven't Reached Out": response.section4?.reasonBrandsHaventReachedOut || "",
+      "Primary Goal For Partnerships": response.section4?.primaryGoalForPartnerships || "",
+      "Primary Goal (Other)": response.section4?.primaryGoalOther || "",
+      "Has Media Kit": response.section4 ? (response.section4.hasMediaKit ? "Yes" : "No") : "",
+      "Thought Stopped From Messaging": response.section4?.thoughtStoppedFromMessaging || "",
+      "Thought Stopped (Other)": response.section4?.thoughtStoppedFromMessagingOther || "",
+      // Section 5
+      "Willing To Join Onboarding Call": response.willingToJoinOnboardingCall ? "Yes" : "No",
+    };
+
+    await sheet.addRow(rowData);
+    console.log("Successfully added row to Google Sheet");
+  } catch (error) {
+    console.error("Error appending to Google Sheet:", error);
+    // Don't throw - we still want to return success to the user
+  }
 }
 
 export async function POST(request: NextRequest) {
@@ -138,10 +211,8 @@ export async function POST(request: NextRequest) {
       };
     }
 
-    // Save to file
-    const responses = await getResponses();
-    responses.push(newResponse);
-    await saveResponses(responses);
+    // Push to Google Sheets
+    await appendToGoogleSheet(newResponse);
 
     return NextResponse.json(
       { message: "Poll response submitted successfully!", id: newResponse.id },
@@ -158,21 +229,46 @@ export async function POST(request: NextRequest) {
 
 export async function GET() {
   try {
-    const responses = await getResponses();
+    const doc = await getGoogleSheet();
+
+    if (!doc) {
+      return NextResponse.json(
+        { error: "Google Sheets not configured" },
+        { status: 503 }
+      );
+    }
+
+    const sheet = doc.sheetsByIndex[0];
+    const rows = await sheet.getRows();
 
     // Return aggregated stats
     const stats = {
-      total: responses.length,
+      total: rows.length,
       byRole: {} as Record<string, number>,
-      hasPartnered: responses.filter(r => r.hasPartneredWithBrand).length,
-      hasNotPartnered: responses.filter(r => !r.hasPartneredWithBrand).length,
-      willingToOnboard: responses.filter(r => r.willingToJoinOnboardingCall).length,
+      hasPartnered: 0,
+      hasNotPartnered: 0,
+      willingToOnboard: 0,
     };
 
-    // Count roles
-    responses.forEach(r => {
-      r.currentRole.forEach(role => {
-        stats.byRole[role] = (stats.byRole[role] || 0) + 1;
+    rows.forEach(row => {
+      // Count partnership status
+      if (row.get("Has Partnered With Brand") === "Yes") {
+        stats.hasPartnered++;
+      } else {
+        stats.hasNotPartnered++;
+      }
+
+      // Count onboarding willingness
+      if (row.get("Willing To Join Onboarding Call") === "Yes") {
+        stats.willingToOnboard++;
+      }
+
+      // Count roles
+      const roles = row.get("Current Role")?.split(", ") || [];
+      roles.forEach((role: string) => {
+        if (role) {
+          stats.byRole[role] = (stats.byRole[role] || 0) + 1;
+        }
       });
     });
 
