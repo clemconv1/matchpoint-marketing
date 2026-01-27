@@ -1,13 +1,15 @@
 @import "tailwindcss";
 
 :root {
-  --background: #0c0c0c;
-  --foreground: #ffffff;
-  --primary: #00ff87;
-  --primary-dark: #00cc6a;
-  --secondary: #ff6b35;
-  --accent: #00d4ff;
-  --dark-surface: #1a1a1a;
+  --background: #ffffff;
+  --foreground: #1a1a2e;
+  --primary: #7c3aed;
+  --primary-dark: #6d28d9;
+  --primary-light: #a78bfa;
+  --secondary: #f97316;
+  --accent: #06b6d4;
+  --surface: #f8f7ff;
+  --surface-dark: #ede9fe;
 }
 
 @theme inline {
@@ -15,9 +17,11 @@
   --color-foreground: var(--foreground);
   --color-primary: var(--primary);
   --color-primary-dark: var(--primary-dark);
+  --color-primary-light: var(--primary-light);
   --color-secondary: var(--secondary);
   --color-accent: var(--accent);
-  --color-dark-surface: var(--dark-surface);
+  --color-surface: var(--surface);
+  --color-surface-dark: var(--surface-dark);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }
@@ -28,84 +32,32 @@ body {
   font-family: var(--font-sans), Arial, Helvetica, sans-serif;
 }
 
-/* Sporty headline style */
-.headline-accent {
-  color: var(--primary);
-  position: relative;
-  display: inline-block;
-}
-
-.headline-accent::after {
-  content: '';
-  position: absolute;
-  bottom: -4px;
-  left: 0;
-  width: 100%;
-  height: 4px;
-  background: var(--primary);
-  transform: skewX(-12deg);
-}
-
-/* Diagonal section divider */
-.diagonal-top {
-  clip-path: polygon(0 8%, 100% 0, 100% 100%, 0 100%);
-}
-
-.diagonal-bottom {
-  clip-path: polygon(0 0, 100% 0, 100% 92%, 0 100%);
-}
-
-/* Speed lines decoration */
-.speed-lines {
-  position: relative;
-  overflow: hidden;
-}
-
-.speed-lines::before {
-  content: '';
-  position: absolute;
-  top: 50%;
-  left: -100%;
-  width: 200%;
-  height: 2px;
-  background: linear-gradient(90deg, transparent, var(--primary), transparent);
-  transform: translateY(-50%) rotate(-3deg);
-  opacity: 0.3;
-}
-
 /* Athletic card style */
 .athletic-card {
-  background: var(--dark-surface);
+  background: rgba(255, 255, 255, 0.8);
   border-left: 4px solid var(--primary);
   position: relative;
   transition: all 0.2s ease;
+  backdrop-filter: blur(8px);
 }
 
 .athletic-card:hover {
   transform: translateX(8px);
-  border-left-color: var(--secondary);
+  box-shadow: 0 10px 40px rgba(124, 58, 237, 0.2);
 }
 
 .athletic-card-orange {
   border-left-color: var(--secondary);
 }
 
-.athletic-card-orange:hover {
-  border-left-color: var(--primary);
-}
-
-.athletic-card-blue {
+.athletic-card-cyan {
   border-left-color: var(--accent);
-}
-
-.athletic-card-blue:hover {
-  border-left-color: var(--primary);
 }
 
 /* Dynamic button */
 .btn-primary {
   background: var(--primary);
-  color: var(--background);
+  color: white;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.05em;
@@ -117,21 +69,7 @@ body {
 .btn-primary:hover {
   background: var(--primary-dark);
   transform: translateY(-2px);
-}
-
-.btn-primary::after {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: -100%;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
-  transition: left 0.4s ease;
-}
-
-.btn-primary:hover::after {
-  left: 100%;
+  box-shadow: 0 10px 30px rgba(124, 58, 237, 0.3);
 }
 
 .btn-outline {
@@ -145,16 +83,17 @@ body {
 
 .btn-outline:hover {
   background: var(--primary);
-  color: var(--background);
+  color: white;
 }
 
 /* Step counter */
 .step-number {
   font-size: 4rem;
   font-weight: 900;
-  color: transparent;
-  -webkit-text-stroke: 2px var(--primary);
+  color: var(--primary);
+  opacity: 0.35;
   line-height: 1;
+  font-family: system-ui, -apple-system, sans-serif;
 }
 
 /* Feature icon container */
@@ -162,7 +101,7 @@ body {
   width: 56px;
   height: 56px;
   background: var(--primary);
-  color: var(--background);
+  color: white;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -173,7 +112,7 @@ body {
   background: var(--secondary);
 }
 
-.icon-box-blue {
+.icon-box-cyan {
   background: var(--accent);
 }
 
@@ -183,45 +122,26 @@ body {
     -45deg,
     transparent,
     transparent 10px,
-    rgba(0, 255, 135, 0.03) 10px,
-    rgba(0, 255, 135, 0.03) 20px
+    rgba(124, 58, 237, 0.03) 10px,
+    rgba(124, 58, 237, 0.03) 20px
   );
-}
-
-/* Section with angled edge */
-.angled-section {
-  position: relative;
-}
-
-.angled-section::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 80px;
-  background: var(--background);
-  clip-path: polygon(0 0, 100% 0, 100% 0, 0 100%);
-}
-
-/* Energetic text highlight */
-.text-highlight {
-  background: linear-gradient(transparent 60%, rgba(0, 255, 135, 0.3) 60%);
 }
 
 /* User type selector */
 .type-selector {
-  border: 2px solid #333;
+  border: 2px solid rgba(124, 58, 237, 0.2);
+  background: rgba(255, 255, 255, 0.8);
   transition: all 0.2s ease;
 }
 
 .type-selector:hover {
-  border-color: #555;
+  border-color: var(--primary-light);
+  background: rgba(255, 255, 255, 0.95);
 }
 
 .type-selector.active {
   border-color: var(--primary);
-  background: rgba(0, 255, 135, 0.1);
+  background: white;
 }
 
 /* Animated underline for nav */
@@ -247,4 +167,31 @@ body {
 /* Check icon style */
 .check-icon {
   color: var(--primary);
+}
+
+/* Platform card */
+.platform-card {
+  background: rgba(255, 255, 255, 0.85);
+  border-top: 4px solid var(--primary);
+  box-shadow: 0 4px 20px rgba(124, 58, 237, 0.1);
+  transition: all 0.2s ease;
+  backdrop-filter: blur(8px);
+}
+
+.platform-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 40px rgba(124, 58, 237, 0.2);
+}
+
+.platform-card-orange {
+  border-top-color: var(--secondary);
+}
+
+.platform-card-cyan {
+  border-top-color: var(--accent);
+}
+
+/* CTA section */
+.cta-section {
+  background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
 }
