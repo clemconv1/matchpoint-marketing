@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import Poll from "./components/Poll";
 
 // Logo component - three interlocking hexagon chain links (athletes, brands, agents)
 const Logo = ({ className = "w-10 h-10" }: { className?: string }) => (
@@ -71,15 +72,13 @@ const ArrowIcon = () => (
   </svg>
 );
 
-// Replace this with your actual Google Survey link
-const SURVEY_LINK = "https://forms.google.com/your-survey-link";
-
 export default function Home() {
   const [email, setEmail] = useState("");
   const [userType, setUserType] = useState<"athlete" | "brand" | "agent">("athlete");
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
   const [message, setMessage] = useState("");
   const [scrollProgress, setScrollProgress] = useState(0);
+  const [showPoll, setShowPoll] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -163,14 +162,12 @@ export default function Home() {
               <a href="#platform" className="nav-link text-sm text-gray-600 hover:text-[#7c3aed] transition">Platform</a>
               <a href="#how-it-works" className="nav-link text-sm text-gray-600 hover:text-[#7c3aed] transition">How it Works</a>
             </div>
-            <a
-              href={SURVEY_LINK}
-              target="_blank"
-              rel="noopener noreferrer"
+            <button
+              onClick={() => setShowPoll(true)}
               className="btn-primary px-5 py-2 text-sm"
             >
               Take Survey
-            </a>
+            </button>
           </div>
         </div>
       </nav>
@@ -203,14 +200,12 @@ export default function Home() {
                 Get Early Access
                 <ArrowIcon />
               </a>
-              <a
-                href={SURVEY_LINK}
-                target="_blank"
-                rel="noopener noreferrer"
+              <button
+                onClick={() => setShowPoll(true)}
                 className="btn-outline px-8 py-4 text-base text-center"
               >
                 Help Shape the Product
-              </a>
+              </button>
             </div>
           </div>
         </div>
@@ -375,15 +370,13 @@ export default function Home() {
                 We're designing MatchPoint with input from athletes, brands, and agents.
                 Your feedback shapes what we build.
               </p>
-              <a
-                href={SURVEY_LINK}
-                target="_blank"
-                rel="noopener noreferrer"
+              <button
+                onClick={() => setShowPoll(true)}
                 className="inline-flex items-center px-8 py-4 bg-white text-[#7c3aed] font-bold uppercase tracking-wider text-base hover:bg-gray-100 transition"
               >
                 Take the Survey
                 <ArrowIcon />
-              </a>
+              </button>
             </div>
           </div>
         </div>
@@ -472,6 +465,9 @@ export default function Home() {
           </div>
         </div>
       </footer>
+
+      {/* Poll Modal */}
+      {showPoll && <Poll onClose={() => setShowPoll(false)} />}
     </div>
   );
 }
