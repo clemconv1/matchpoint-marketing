@@ -1,0 +1,53 @@
+import { ImageResponse } from "next/og";
+
+export const size = {
+  width: 32,
+  height: 32,
+};
+export const contentType = "image/png";
+
+export default function Icon() {
+  return new ImageResponse(
+    (
+      <svg
+        width="32"
+        height="32"
+        viewBox="-5 -4 60 40"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        {/* Left hexagon - full continuous shape */}
+        <path
+          d="M3 12L8 6H16L21 12V20L16 26H8L3 20V12Z"
+          stroke="#7c3aed"
+          strokeWidth="2.5"
+          strokeLinejoin="round"
+          fill="none"
+        />
+        {/* Center hexagon - raised to show athlete rising */}
+        <path
+          d="M17 6L22 0H30L35 6V14L30 20H22L17 14V6Z"
+          stroke="#9333ea"
+          strokeWidth="2.5"
+          strokeLinejoin="round"
+          fill="none"
+        />
+        {/* Right hexagon - full continuous shape */}
+        <path
+          d="M31 12L36 6H44L49 12V20L44 26H36L31 20V12Z"
+          stroke="#a78bfa"
+          strokeWidth="2.5"
+          strokeLinejoin="round"
+          fill="none"
+        />
+        {/* Weave effect - left over center */}
+        <path d="M17 6V14" stroke="#7c3aed" strokeWidth="3" fill="none" />
+        {/* Weave effect - right over center */}
+        <path d="M35 6V14" stroke="#a78bfa" strokeWidth="3" fill="none" />
+      </svg>
+    ),
+    {
+      ...size,
+    }
+  );
+}
