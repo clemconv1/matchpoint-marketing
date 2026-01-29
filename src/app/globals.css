@@ -1,15 +1,28 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #1a1a2e;
+  /* Warm-tinted neutrals for cohesion */
+  --ink: #0f0d15;
+  --ink-secondary: #3d3a47;
+  --ink-muted: #6b6779;
+  --surface-warm: #faf9f7;
+  --surface-cream: #f5f3ef;
+  --surface-dim: #eceae6;
+  --border-subtle: #e8e6e1;
+
+  /* Brand purple — used sparingly for maximum impact */
   --primary: #7c3aed;
   --primary-dark: #6d28d9;
   --primary-light: #a78bfa;
-  --secondary: #f97316;
-  --accent: #06b6d4;
-  --surface: #f8f7ff;
-  --surface-dark: #ede9fe;
+  --primary-wash: #f3efff;
+
+  /* Secondary accents */
+  --secondary: #e86c2e;
+  --accent: #0ea5c7;
+
+  /* Legacy mappings */
+  --background: #faf9f7;
+  --foreground: #0f0d15;
 }
 
 @theme inline {
@@ -20,178 +33,299 @@
   --color-primary-light: var(--primary-light);
   --color-secondary: var(--secondary);
   --color-accent: var(--accent);
-  --color-surface: var(--surface);
-  --color-surface-dark: var(--surface-dark);
+  --color-surface: var(--surface-warm);
+  --color-surface-dark: var(--surface-dim);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }
 
+/* ============================================
+   BASE
+   ============================================ */
+
+html {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: var(--font-sans), Arial, Helvetica, sans-serif;
+  background: var(--surface-warm);
+  color: var(--ink);
+  font-family: var(--font-sans), system-ui, -apple-system, sans-serif;
+  font-feature-settings: "ss01", "cv01";
+  font-kerning: normal;
 }
 
-/* Athletic card style */
-.athletic-card {
-  background: rgba(255, 255, 255, 0.8);
-  border-left: 4px solid var(--primary);
-  position: relative;
-  transition: all 0.2s ease;
-  backdrop-filter: blur(8px);
-}
-
-.athletic-card:hover {
-  transform: translateX(8px);
-  box-shadow: 0 10px 40px rgba(124, 58, 237, 0.2);
-}
-
-.athletic-card-orange {
-  border-left-color: var(--secondary);
-}
-
-.athletic-card-cyan {
-  border-left-color: var(--accent);
-}
-
-/* Dynamic button */
-.btn-primary {
-  background: var(--primary);
-  color: white;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-  position: relative;
-  overflow: hidden;
-  transition: all 0.2s ease;
-}
-
-.btn-primary:hover {
-  background: var(--primary-dark);
-  transform: translateY(-2px);
-  box-shadow: 0 10px 30px rgba(124, 58, 237, 0.3);
-}
-
-.btn-outline {
-  border: 2px solid var(--primary);
-  color: var(--primary);
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-  transition: all 0.2s ease;
-}
-
-.btn-outline:hover {
+::selection {
   background: var(--primary);
   color: white;
 }
 
-/* Step counter */
-.step-number {
-  font-size: 4rem;
-  font-weight: 900;
-  color: var(--primary);
-  opacity: 0.35;
-  line-height: 1;
-  font-family: system-ui, -apple-system, sans-serif;
-}
+/* ============================================
+   NAVIGATION
+   ============================================ */
 
-/* Feature icon container */
-.icon-box {
-  width: 56px;
-  height: 56px;
-  background: var(--primary);
-  color: white;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  clip-path: polygon(0 0, 100% 0, 100% 70%, 85% 100%, 0 100%);
-}
-
-.icon-box-orange {
-  background: var(--secondary);
-}
-
-.icon-box-cyan {
-  background: var(--accent);
-}
-
-/* Striped background accent */
-.striped-bg {
-  background: repeating-linear-gradient(
-    -45deg,
-    transparent,
-    transparent 10px,
-    rgba(124, 58, 237, 0.03) 10px,
-    rgba(124, 58, 237, 0.03) 20px
-  );
-}
-
-/* User type selector */
-.type-selector {
-  border: 2px solid rgba(124, 58, 237, 0.2);
-  background: rgba(255, 255, 255, 0.8);
-  transition: all 0.2s ease;
-}
-
-.type-selector:hover {
-  border-color: var(--primary-light);
-  background: rgba(255, 255, 255, 0.95);
-}
-
-.type-selector.active {
-  border-color: var(--primary);
-  background: white;
-}
-
-/* Animated underline for nav */
 .nav-link {
   position: relative;
+  letter-spacing: 0.01em;
 }
 
 .nav-link::after {
   content: '';
   position: absolute;
-  bottom: -4px;
+  bottom: -2px;
   left: 0;
   width: 0;
-  height: 2px;
-  background: var(--primary);
-  transition: width 0.2s ease;
+  height: 1.5px;
+  background: var(--ink);
+  transition: width 0.3s cubic-bezier(0.25, 1, 0.5, 1);
 }
 
 .nav-link:hover::after {
   width: 100%;
 }
 
-/* Check icon style */
-.check-icon {
-  color: var(--primary);
+/* ============================================
+   BUTTONS
+   ============================================ */
+
+.btn-primary {
+  background: var(--ink);
+  color: var(--surface-warm);
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  border-radius: 100px;
+  transition: all 0.25s cubic-bezier(0.25, 1, 0.5, 1);
 }
 
-/* Platform card */
+.btn-primary:hover {
+  background: var(--primary);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 20px rgba(124, 58, 237, 0.25);
+}
+
+.btn-primary:active {
+  transform: translateY(0);
+}
+
+.btn-outline {
+  border: 1.5px solid var(--border-subtle);
+  color: var(--ink);
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  border-radius: 100px;
+  transition: all 0.25s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.btn-outline:hover {
+  border-color: var(--ink);
+  background: var(--ink);
+  color: var(--surface-warm);
+}
+
+/* ============================================
+   FEATURE CARDS
+   ============================================ */
+
+.athletic-card {
+  background: white;
+  border: 1px solid var(--border-subtle);
+  border-radius: 16px;
+  position: relative;
+  transition: all 0.35s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.athletic-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 48px rgba(15, 13, 21, 0.08), 0 2px 8px rgba(15, 13, 21, 0.04);
+  border-color: transparent;
+}
+
+/* Remove old colored border variants */
+.athletic-card-orange,
+.athletic-card-cyan {
+  border-left-color: var(--border-subtle);
+}
+
+/* ============================================
+   ICON CONTAINERS
+   ============================================ */
+
+.icon-box {
+  width: 48px;
+  height: 48px;
+  background: var(--primary-wash);
+  color: var(--primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 12px;
+  clip-path: none;
+}
+
+.icon-box-orange {
+  background: #fef3eb;
+  color: var(--secondary);
+}
+
+.icon-box-cyan {
+  background: #ecfbfe;
+  color: var(--accent);
+}
+
+/* ============================================
+   PLATFORM CARDS
+   ============================================ */
+
 .platform-card {
-  background: rgba(255, 255, 255, 0.85);
-  border-top: 4px solid var(--primary);
-  box-shadow: 0 4px 20px rgba(124, 58, 237, 0.1);
-  transition: all 0.2s ease;
-  backdrop-filter: blur(8px);
+  background: white;
+  border: 1px solid var(--border-subtle);
+  border-radius: 16px;
+  border-top: none;
+  box-shadow: none;
+  transition: all 0.35s cubic-bezier(0.25, 1, 0.5, 1);
 }
 
 .platform-card:hover {
   transform: translateY(-4px);
-  box-shadow: 0 12px 40px rgba(124, 58, 237, 0.2);
+  box-shadow: 0 16px 48px rgba(15, 13, 21, 0.08), 0 2px 8px rgba(15, 13, 21, 0.04);
+  border-color: transparent;
 }
 
-.platform-card-orange {
-  border-top-color: var(--secondary);
-}
-
+.platform-card-orange,
 .platform-card-cyan {
-  border-top-color: var(--accent);
+  border-top-color: transparent;
 }
 
-/* CTA section */
+/* ============================================
+   CHECK ICON
+   ============================================ */
+
+.check-icon {
+  color: var(--primary);
+}
+
+/* ============================================
+   STEP NUMBERS
+   ============================================ */
+
+.step-number {
+  font-size: clamp(3rem, 5vw, 4.5rem);
+  font-weight: 200;
+  color: var(--primary-light);
+  line-height: 1;
+  font-family: var(--font-sans), system-ui, sans-serif;
+  opacity: 1;
+  font-variant-numeric: tabular-nums;
+}
+
+/* ============================================
+   CTA SECTION
+   ============================================ */
+
 .cta-section {
-  background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+  background: var(--ink);
+  border-radius: 24px;
+}
+
+/* ============================================
+   TYPE SELECTOR
+   ============================================ */
+
+.type-selector {
+  border: 1.5px solid var(--border-subtle);
+  background: white;
+  border-radius: 100px;
+  transition: all 0.25s cubic-bezier(0.25, 1, 0.5, 1);
+  text-transform: capitalize;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+}
+
+.type-selector:hover {
+  border-color: var(--ink-muted);
+  background: white;
+}
+
+.type-selector.active {
+  border-color: var(--ink);
+  background: var(--ink);
+  color: white !important;
+}
+
+/* ============================================
+   STEP CONNECTOR (How It Works)
+   ============================================ */
+
+.step-connector {
+  position: relative;
+}
+
+.step-connector::after {
+  content: '';
+  position: absolute;
+  top: 28px;
+  right: -32px;
+  width: 32px;
+  height: 1.5px;
+  background: var(--border-subtle);
+}
+
+.step-connector:last-child::after {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .step-connector::after {
+    display: none;
+  }
+}
+
+/* ============================================
+   ANIMATIONS
+   ============================================ */
+
+@keyframes gentle-float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+}
+
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-up {
+  animation: fade-up 0.6s cubic-bezier(0.25, 1, 0.5, 1) both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-fade-up {
+    animation: none;
+    opacity: 1;
+  }
+  .step-connector::after {
+    transition: none;
+  }
+}
+
+/* ============================================
+   MISC
+   ============================================ */
+
+/* Striped bg — kept but refined */
+.striped-bg {
+  background: repeating-linear-gradient(
+    -45deg,
+    transparent,
+    transparent 10px,
+    rgba(15, 13, 21, 0.015) 10px,
+    rgba(15, 13, 21, 0.015) 20px
+  );
 }
