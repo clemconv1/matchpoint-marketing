@@ -227,36 +227,19 @@ export default function Home() {
                   <line x1="62" y1="320" x2="358" y2="320" stroke="var(--border-subtle)" strokeWidth="1" strokeOpacity="0.35" />
                   <line x1="358" y1="320" x2="210" y2="48" stroke="var(--border-subtle)" strokeWidth="1" strokeOpacity="0.35" />
 
-                  {/* Animated dots — Athlete to center */}
+                  {/* Animated dot — Athlete to center (back and forth) */}
                   <circle r="3.5" fill="var(--primary)" opacity="0.6">
-                    <animateMotion dur="3s" repeatCount="indefinite" path="M210,48 L210,210" />
-                  </circle>
-                  <circle r="3.5" fill="var(--primary)" opacity="0.6">
-                    <animateMotion dur="3s" repeatCount="indefinite" path="M210,210 L210,48" />
+                    <animateMotion dur="3s" repeatCount="indefinite" keyPoints="0;1;0" keyTimes="0;0.5;1" calcMode="spline" keySplines="0.42 0 0.58 1;0.42 0 0.58 1" path="M210,48 L210,210" />
                   </circle>
 
-                  {/* Animated dots — Brand to center */}
+                  {/* Animated dot — Brand to center (back and forth) */}
                   <circle r="3.5" fill="var(--secondary)" opacity="0.6">
-                    <animateMotion dur="3s" repeatCount="indefinite" path="M62,320 L210,210" />
-                  </circle>
-                  <circle r="3.5" fill="var(--secondary)" opacity="0.6">
-                    <animateMotion dur="3s" repeatCount="indefinite" path="M210,210 L62,320" />
+                    <animateMotion dur="3s" repeatCount="indefinite" begin="0.5s" keyPoints="0;1;0" keyTimes="0;0.5;1" calcMode="spline" keySplines="0.42 0 0.58 1;0.42 0 0.58 1" path="M62,320 L210,210" />
                   </circle>
 
-                  {/* Animated dots — Agent to center */}
+                  {/* Animated dot — Agent to center (back and forth) */}
                   <circle r="3.5" fill="var(--accent)" opacity="0.6">
-                    <animateMotion dur="3s" repeatCount="indefinite" path="M358,320 L210,210" />
-                  </circle>
-                  <circle r="3.5" fill="var(--accent)" opacity="0.6">
-                    <animateMotion dur="3s" repeatCount="indefinite" path="M210,210 L358,320" />
-                  </circle>
-
-                  {/* Animated dots — outer triangle */}
-                  <circle r="2.5" fill="var(--primary-light)" opacity="0.4">
-                    <animateMotion dur="4s" repeatCount="indefinite" path="M210,48 L62,320 L358,320 Z" />
-                  </circle>
-                  <circle r="2.5" fill="var(--primary-light)" opacity="0.4">
-                    <animateMotion dur="4s" repeatCount="indefinite" begin="2s" path="M210,48 L62,320 L358,320 Z" />
+                    <animateMotion dur="3s" repeatCount="indefinite" begin="1s" keyPoints="0;1;0" keyTimes="0;0.5;1" calcMode="spline" keySplines="0.42 0 0.58 1;0.42 0 0.58 1" path="M358,320 L210,210" />
                   </circle>
                 </svg>
 
