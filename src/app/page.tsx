@@ -61,7 +61,7 @@ const PlatformIcon = () => (
 );
 
 const CheckIcon = () => (
-  <svg className="w-5 h-5 check-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+  <svg className="w-5 h-5 shrink-0 check-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor">
     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
   </svg>
 );
@@ -330,9 +330,12 @@ export default function Home() {
         <div className="max-w-6xl mx-auto">
           <div className="max-w-xl mb-16">
             <p className="text-sm font-medium tracking-wide mb-3" style={{ color: "var(--primary)" }}>What We Offer</p>
-            <h2 className="text-3xl md:text-4xl font-semibold tracking-tight leading-tight" style={{ color: "var(--ink)" }}>
-              Powered by data,<br />built for partnerships
+            <h2 className="text-3xl md:text-4xl font-semibold tracking-tight leading-tight mb-4" style={{ color: "var(--ink)" }}>
+              Calculated alignment,<br />Seemless execution
             </h2>
+            <p className="text-base leading-relaxed" style={{ color: "var(--ink-muted)" }}>
+              We&apos;re designing MatchPoints to solve the problems Athletes, Agencies and Brands face on a daily basis. Your feedback helps us solve for your challenges.
+            </p>
           </div>
 
           <div className="grid md:grid-cols-3 gap-5">
@@ -340,9 +343,9 @@ export default function Home() {
               <div className="icon-box mb-6">
                 <ChartIcon />
               </div>
-              <h3 className="text-lg font-semibold mb-3" style={{ color: "var(--ink)" }}>Athlete Performance Index</h3>
+              <h3 className="text-lg font-semibold mb-3" style={{ color: "var(--ink)" }}>Matchpoints Index</h3>
               <p className="leading-relaxed text-[15px]" style={{ color: "var(--ink-muted)" }}>
-                We identify rising <span style={{ color: "var(--primary)", fontWeight: 500 }}>Athletes</span> before they break out, giving <span style={{ color: "var(--primary-dark)", fontWeight: 500 }}>Brands</span> early access to tomorrow&#39;s champions.
+                We leverage our proprietary algorithms to bridge <span style={{ color: "var(--primary)", fontWeight: 500 }}>Athlete</span> trajectory with <span style={{ color: "var(--primary-dark)", fontWeight: 500 }}>Brand</span> DNA to engineer partnerships destined for impact.
               </p>
             </div>
 
@@ -352,7 +355,7 @@ export default function Home() {
               </div>
               <h3 className="text-lg font-semibold mb-3" style={{ color: "var(--ink)" }}>Extensive Network</h3>
               <p className="leading-relaxed text-[15px]" style={{ color: "var(--ink-muted)" }}>
-                We&#39;re building a network of <span style={{ color: "var(--primary-dark)", fontWeight: 500 }}>Brands</span> and <span style={{ color: "var(--primary)", fontWeight: 500 }}>Agents</span> ready to partner with <span style={{ color: "var(--primary)", fontWeight: 500 }}>Athletes</span> at every stage of their career.
+                A global network connecting <span style={{ color: "var(--primary-dark)", fontWeight: 500 }}>Brands</span> to a range of <span style={{ color: "var(--primary)", fontWeight: 500 }}>Athletes</span> and <span style={{ color: "var(--primary)", fontWeight: 500 }}>Agents</span> at every stage of their career.
               </p>
             </div>
 
@@ -362,7 +365,7 @@ export default function Home() {
               </div>
               <h3 className="text-lg font-semibold mb-3" style={{ color: "var(--ink)" }}>All-in-One Platform</h3>
               <p className="leading-relaxed text-[15px]" style={{ color: "var(--ink-muted)" }}>
-                We accompany <span style={{ color: "var(--primary)", fontWeight: 500 }}>Athletes</span>, <span style={{ color: "var(--primary-dark)", fontWeight: 500 }}>Brands</span>, and <span style={{ color: "var(--primary)", fontWeight: 500 }}>Agents</span> from discovery to signing, with full transparency every step of the way.
+                Our all-in-one solution that simplifies the entire partnership lifecycle — from intelligent matching and seamless contracting to real-time campaign measurement.
               </p>
             </div>
           </div>
@@ -375,7 +378,7 @@ export default function Home() {
           <div className="max-w-xl mb-16">
             <p className="text-sm font-medium tracking-wide mb-3" style={{ color: "var(--secondary)" }}>Our Strategic Edge</p>
             <h2 className="text-3xl md:text-4xl font-semibold tracking-tight leading-tight" style={{ color: "var(--ink)" }}>
-              Three experiences,<br />one platform
+              One Platform,<br />Three Optimized Workflows
             </h2>
           </div>
 
@@ -387,10 +390,10 @@ export default function Home() {
               </div>
               <h3 className="text-xl font-semibold mb-3" style={{ color: "var(--ink)" }}>For Brands</h3>
               <p className="mb-6 text-[15px]" style={{ color: "var(--ink-muted)" }}>
-                Find <span style={{ color: "var(--primary)", fontWeight: 500 }}>Athletes</span> that match your target audience and campaign goals.
+                Discover, connect and manage <span style={{ color: "var(--primary)", fontWeight: 500 }}>Athlete</span> partnerships that match your target audience and campaign goals.
               </p>
               <ul className="space-y-3">
-                {["Smart athlete recommendations", "Filter by sport & demographics", "Campaign dashboard", "ROI tracking"].map((item) => (
+                {["Tailored athlete recommendations", "Frictionless contractual processes", "Simplified financial transactions", "Real-time campaign tracking"].map((item) => (
                   <li key={item} className="flex items-center gap-3">
                     <CheckIcon />
                     <span className="text-sm" style={{ color: "var(--ink-secondary)" }}>{item}</span>
@@ -406,10 +409,10 @@ export default function Home() {
               </div>
               <h3 className="text-xl font-semibold mb-3" style={{ color: "var(--ink)" }}>For Athletes</h3>
               <p className="mb-6 text-[15px]" style={{ color: "var(--ink-muted)" }}>
-                Let <span style={{ color: "var(--primary)", fontWeight: 500 }}>Brands</span> come to you while you focus on training and competing.
+                Scale your career with elite partnerships, legal certainty, and financial clarity.
               </p>
               <ul className="space-y-3">
-                {["Brands find you first", "More time for training", "Get discovered early", "Track partnerships"].map((item) => (
+                {["Maximise NIL Value as a known or emerging athlete", "Access vetted network of professional representation", "Legal and contractual certainty and clarity", "Transparent transactions and simplified management"].map((item) => (
                   <li key={item} className="flex items-center gap-3">
                     <CheckIcon />
                     <span className="text-sm" style={{ color: "var(--ink-secondary)" }}>{item}</span>
@@ -425,10 +428,10 @@ export default function Home() {
               </div>
               <h3 className="text-xl font-semibold mb-3" style={{ color: "var(--ink)" }}>For Agents</h3>
               <p className="mb-6 text-[15px]" style={{ color: "var(--ink-muted)" }}>
-                Manage your <span style={{ color: "var(--primary)", fontWeight: 500 }}>Athletes</span> and maximize partnership revenue with <span style={{ color: "var(--primary)", fontWeight: 500 }}>Brands</span>.
+                Scale growth through intelligent networking and automated portfolio management.
               </p>
               <ul className="space-y-3">
-                {["Portfolio management", "Campaign analytics", "Bulk opportunities", "Revenue tracking"].map((item) => (
+                {["Unlock a brand and player network at scale", "Player performance intelligence to drive growth opportunities", "Effortless portfolio management and unified communication", "Automated administrative tasks and payment transparency"].map((item) => (
                   <li key={item} className="flex items-center gap-3">
                     <CheckIcon />
                     <span className="text-sm" style={{ color: "var(--ink-secondary)" }}>{item}</span>
@@ -450,21 +453,37 @@ export default function Home() {
             </h2>
           </div>
 
-          <div className="grid md:grid-cols-4 gap-12 md:gap-8">
+          <div className="hidden md:grid md:gap-0" style={{ gridTemplateColumns: "1fr 40px 1fr 40px 1fr 40px 1fr", gridTemplateRows: "auto auto auto" }}>
             {[
-              { step: "01", title: "Connect", desc: "Athletes link their socials and sports data. Brands define their goals." },
-              { step: "02", title: "Analyze", desc: "We predict performance trajectory and analyze audience fit." },
-              { step: "03", title: "Match", desc: "Brands get curated recommendations. Athletes receive opportunities." },
-              { step: "04", title: "Perform", desc: "Focus on what matters while we track campaign performance." },
-            ].map((item, i) => (
-              <div key={item.step} className="step-connector relative">
+              { step: "01", title: "Profile Creation and Verification", desc: "Tell us who you are and what your non-negotiables are." },
+              { step: "02", title: "Analyze", desc: "We bridge athlete trajectory with brand DNA based on specific Brand objectives and targeting." },
+              { step: "03", title: "Connect", desc: "Initiate partnerships through curated recommendations and streamlined agreements." },
+              { step: "04", title: "Execute and Measure", desc: "Focus on what matters, while we track and measure your campaign performances." },
+            ].flatMap((item, i) => {
+              const col = i * 2 + 1;
+              const connectorCol = i * 2 + 2;
+              return [
+                <div key={`num-${item.step}`} className="step-card flex justify-center pb-5" style={{ gridColumn: col, gridRow: 1 }}>
+                  <div className="step-number">{item.step}</div>
+                </div>,
+                <h3 key={`title-${item.step}`} className="step-card text-lg font-semibold text-center pb-2 px-2" style={{ color: "var(--ink)", gridColumn: col, gridRow: 2 }}>{item.title}</h3>,
+                <p key={`desc-${item.step}`} className="step-card text-[15px] leading-relaxed text-center px-2" style={{ color: "var(--ink-muted)", gridColumn: col, gridRow: 3 }}>{item.desc}</p>,
+                ...(i < 3 ? [<div key={`line-${i}`} className="flex items-center step-connector-line" style={{ gridColumn: connectorCol, gridRow: 1 }} />] : []),
+              ];
+            })}
+          </div>
+          {/* Mobile layout */}
+          <div className="flex flex-col gap-10 md:hidden">
+            {[
+              { step: "01", title: "Profile Creation and Verification", desc: "Tell us who you are and what your non-negotiables are." },
+              { step: "02", title: "Analyze", desc: "We bridge athlete trajectory with brand DNA based on specific Brand objectives and targeting." },
+              { step: "03", title: "Connect", desc: "Initiate partnerships through curated recommendations and streamlined agreements." },
+              { step: "04", title: "Execute and Measure", desc: "Focus on what matters, while we track and measure your campaign performances." },
+            ].map((item) => (
+              <div key={item.step} className="step-card flex flex-col items-center text-center">
                 <div className="step-number mb-5">{item.step}</div>
                 <h3 className="text-lg font-semibold mb-2" style={{ color: "var(--ink)" }}>{item.title}</h3>
                 <p className="text-[15px] leading-relaxed" style={{ color: "var(--ink-muted)" }}>{item.desc}</p>
-                {/* Connector dot */}
-                {i < 3 && (
-                  <div className="hidden md:block absolute top-[28px] -right-[18px] w-[5px] h-[5px] rounded-full" style={{ background: "var(--primary-light)" }} />
-                )}
               </div>
             ))}
           </div>
@@ -490,7 +509,7 @@ export default function Home() {
                 className="inline-flex items-center px-7 py-3.5 text-sm font-medium rounded-full transition-all duration-300 hover:opacity-90"
                 style={{ background: "white", color: "var(--ink)" }}
               >
-                Help Shape The Product
+                Take the Survey
                 <ArrowIcon />
               </button>
             </div>
