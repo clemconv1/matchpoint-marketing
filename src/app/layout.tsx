@@ -13,11 +13,11 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "MatchPoint AI | Connect Athletes with Brands",
+  title: "MatchPoints AI | Connect Athletes with Brands",
   description: "The AI-powered platform connecting athletes and agents with brand partnerships. Find sponsorship opportunities easier than ever.",
   keywords: ["athlete sponsorship", "brand partnerships", "sports marketing", "athlete management", "influencer marketing"],
   openGraph: {
-    title: "MatchPoint AI | Connect Athletes with Brands",
+    title: "MatchPoints AI | Connect Athletes with Brands",
     description: "The AI-powered platform connecting athletes and agents with brand partnerships.",
     type: "website",
   },

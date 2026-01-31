@@ -16,7 +16,7 @@ export default function Maintenance() {
         </h1>
 
         <p className="text-gray-600 text-lg mb-8">
-          We're working on something exciting. MatchPoint will be back shortly.
+          We're working on something exciting. MatchPoints will be back shortly.
         </p>
 
         <div className="inline-flex items-center gap-2 px-4 py-2 bg-[#7c3aed]/10 border border-[#7c3aed]/20 rounded-full">

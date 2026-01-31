@@ -286,7 +286,7 @@ export default function Poll({ onClose }: PollProps) {
           </div>
           <h3 className="text-2xl font-bold text-[#1a1a2e] mb-4">Thank You!</h3>
           <p className="text-gray-600 mb-6">
-            Your feedback is incredibly valuable to us. We'll use your insights to build a better MatchPoint.
+            Your feedback is incredibly valuable to us. We'll use your insights to build a better Matchpoints.
           </p>
           <button
             onClick={onClose}
@@ -338,7 +338,7 @@ export default function Poll({ onClose }: PollProps) {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
                 </svg>
               </div>
-              <h3 className="text-2xl font-bold text-[#1a1a2e] mb-4">Help Shape MatchPoint</h3>
+              <h3 className="text-2xl font-bold text-[#1a1a2e] mb-4">Help Shape MatchPoints</h3>
               <p className="text-gray-600 mb-6 max-w-md mx-auto">
                 This survey takes about <span className="font-semibold text-[#7c3aed]">5 minutes</span> to complete.
                 Your answers will help us build a better platform for athletes and brands.
