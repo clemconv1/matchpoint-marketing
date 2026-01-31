@@ -153,13 +153,23 @@ export default function Home() {
               <a href="#features" className="nav-link text-sm" style={{ color: "var(--ink-muted)" }}>Features</a>
               <a href="#platform" className="nav-link text-sm" style={{ color: "var(--ink-muted)" }}>Platform</a>
               <a href="#how-it-works" className="nav-link text-sm" style={{ color: "var(--ink-muted)" }}>How it Works</a>
+              <a href="#contact" className="nav-link text-sm" style={{ color: "var(--ink-muted)" }}>Contact</a>
             </div>
-            <button
-              onClick={() => setShowPoll(true)}
-              className="btn-primary px-5 py-2 text-sm"
-            >
-              Take Survey
-            </button>
+            <div className="flex items-center gap-3">
+              <a
+                href="#signup"
+                className="btn-primary px-5 py-2 text-sm inline-flex items-center justify-center"
+              >
+                Get Early Access
+              </a>
+              <button
+                onClick={() => setShowPoll(true)}
+                className="px-5 py-2 text-sm font-medium rounded-full transition-all duration-300 hover:opacity-90"
+                style={{ background: "white", color: "var(--ink)", border: "1px solid var(--border-subtle)" }}
+              >
+                Help Shape The Product
+              </button>
+            </div>
           </div>
         </div>
       </nav>
@@ -216,10 +226,38 @@ export default function Home() {
                   <line x1="210" y1="48" x2="62" y2="320" stroke="var(--border-subtle)" strokeWidth="1" strokeOpacity="0.35" />
                   <line x1="62" y1="320" x2="358" y2="320" stroke="var(--border-subtle)" strokeWidth="1" strokeOpacity="0.35" />
                   <line x1="358" y1="320" x2="210" y2="48" stroke="var(--border-subtle)" strokeWidth="1" strokeOpacity="0.35" />
-                  {/* Small dots along lines */}
-                  <circle cx="210" cy="130" r="3" fill="var(--primary-light)" opacity="0.5" />
-                  <circle cx="136" cy="265" r="3" fill="var(--primary-light)" opacity="0.5" />
-                  <circle cx="284" cy="265" r="3" fill="var(--primary-light)" opacity="0.5" />
+
+                  {/* Animated dots — Athlete to center */}
+                  <circle r="3.5" fill="var(--primary)" opacity="0.6">
+                    <animateMotion dur="3s" repeatCount="indefinite" path="M210,48 L210,210" />
+                  </circle>
+                  <circle r="3.5" fill="var(--primary)" opacity="0.6">
+                    <animateMotion dur="3s" repeatCount="indefinite" path="M210,210 L210,48" />
+                  </circle>
+
+                  {/* Animated dots — Brand to center */}
+                  <circle r="3.5" fill="var(--secondary)" opacity="0.6">
+                    <animateMotion dur="3s" repeatCount="indefinite" path="M62,320 L210,210" />
+                  </circle>
+                  <circle r="3.5" fill="var(--secondary)" opacity="0.6">
+                    <animateMotion dur="3s" repeatCount="indefinite" path="M210,210 L62,320" />
+                  </circle>
+
+                  {/* Animated dots — Agent to center */}
+                  <circle r="3.5" fill="var(--accent)" opacity="0.6">
+                    <animateMotion dur="3s" repeatCount="indefinite" path="M358,320 L210,210" />
+                  </circle>
+                  <circle r="3.5" fill="var(--accent)" opacity="0.6">
+                    <animateMotion dur="3s" repeatCount="indefinite" path="M210,210 L358,320" />
+                  </circle>
+
+                  {/* Animated dots — outer triangle */}
+                  <circle r="2.5" fill="var(--primary-light)" opacity="0.4">
+                    <animateMotion dur="4s" repeatCount="indefinite" path="M210,48 L62,320 L358,320 Z" />
+                  </circle>
+                  <circle r="2.5" fill="var(--primary-light)" opacity="0.4">
+                    <animateMotion dur="4s" repeatCount="indefinite" begin="2s" path="M210,48 L62,320 L358,320 Z" />
+                  </circle>
                 </svg>
 
                 {/* Center — logo mark */}
@@ -335,7 +373,7 @@ export default function Home() {
       <section id="platform" className="py-24 md:py-32 px-6" style={{ background: "var(--surface-warm)" }}>
         <div className="max-w-6xl mx-auto">
           <div className="max-w-xl mb-16">
-            <p className="text-sm font-medium tracking-wide mb-3" style={{ color: "var(--secondary)" }}>Built For Everyone</p>
+            <p className="text-sm font-medium tracking-wide mb-3" style={{ color: "var(--secondary)" }}>Our Strategic Edge</p>
             <h2 className="text-3xl md:text-4xl font-semibold tracking-tight leading-tight" style={{ color: "var(--ink)" }}>
               Three experiences,<br />one platform
             </h2>
@@ -406,7 +444,7 @@ export default function Home() {
       <section id="how-it-works" className="py-24 md:py-32 px-6" style={{ background: "white" }}>
         <div className="max-w-6xl mx-auto">
           <div className="max-w-xl mb-20">
-            <p className="text-sm font-medium tracking-wide mb-3" style={{ color: "var(--accent)" }}>Simple Process</p>
+            <p className="text-sm font-medium tracking-wide mb-3" style={{ color: "var(--accent)" }}>The Game Plan</p>
             <h2 className="text-3xl md:text-4xl font-semibold tracking-tight leading-tight" style={{ color: "var(--ink)" }}>
               How it works
             </h2>
@@ -452,7 +490,7 @@ export default function Home() {
                 className="inline-flex items-center px-7 py-3.5 text-sm font-medium rounded-full transition-all duration-300 hover:opacity-90"
                 style={{ background: "white", color: "var(--ink)" }}
               >
-                Take the Survey
+                Help Shape The Product
                 <ArrowIcon />
               </button>
             </div>
@@ -529,6 +567,26 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Contact Us */}
+      <section id="contact" className="py-24 md:py-32 px-6" style={{ background: "white" }}>
+        <div className="max-w-lg mx-auto text-center">
+          <p className="text-sm font-medium tracking-wide mb-3" style={{ color: "var(--primary)" }}>Get In Touch</p>
+          <h2 className="text-3xl md:text-4xl font-semibold tracking-tight mb-4" style={{ color: "var(--ink)" }}>
+            Contact Us
+          </h2>
+          <p className="text-base mb-8" style={{ color: "var(--ink-muted)" }}>
+            Have questions or want to learn more? We&apos;d love to hear from you.
+          </p>
+          <a
+            href="mailto:info@matchpoints.io"
+            className="btn-primary px-8 py-3.5 text-sm inline-flex items-center justify-center gap-2"
+          >
+            info@matchpoints.io
+            <ArrowIcon />
+          </a>
+        </div>
+      </section>
+
       {/* Footer */}
       <footer className="py-10 px-6" style={{ borderTop: "1px solid var(--border-subtle)" }}>
         <div className="max-w-6xl mx-auto">
@@ -542,6 +600,7 @@ export default function Home() {
               <a href="#features" className="text-sm transition" style={{ color: "var(--ink-muted)" }}>Features</a>
               <a href="#platform" className="text-sm transition" style={{ color: "var(--ink-muted)" }}>Platform</a>
               <a href="#how-it-works" className="text-sm transition" style={{ color: "var(--ink-muted)" }}>How it Works</a>
+              <a href="#contact" className="text-sm transition" style={{ color: "var(--ink-muted)" }}>Contact</a>
             </div>
 
             <p className="text-xs" style={{ color: "var(--ink-muted)" }}>
